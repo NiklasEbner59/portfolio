@@ -26,15 +26,8 @@ const projects = [
     title: "Portfolio Website",
     description: "A personal website to showcase my projects and skills.",
     image: "", // z.B. "project1.jpg" oder leer lassen
-    link: "https://github.com/NiklasEbner59",
+    link: "https://github.com/NiklasEbner59/portfolio",
     tags: ["HTML", "CSS", "JavaScript"]
-  },
-  {
-    title: "Weather App",
-    description: "A simple weather app using a public API.",
-    image: "", // z.B. "weatherapp.jpg"
-    link: "",
-    tags: ["API", "JavaScript"]
   }
   // Weitere Projekte einfach ergänzen
 ];

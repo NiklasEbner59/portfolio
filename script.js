@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "This is my personal portfolio website where I present my projects",
-    image: "project_thumbnails/portfolio_thumbnail.png",
+    image: "images/project_thumbnails/portfolio_thumbnail.png",
     link: "https://github.com/NiklasEbner59/portfolio",
     tags: ["JavaScript", "HTML", "CSS"]
   }

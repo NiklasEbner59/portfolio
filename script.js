@@ -78,4 +78,11 @@ if (navbar) {
     }
     lastScrollY = window.scrollY;
   });
+}
+
+const hotzone = document.querySelector('.navbar-hotzone');
+if (hotzone && navbar) {
+  hotzone.addEventListener('mouseenter', () => {
+    navbar.classList.remove('navbar--hidden');
+  });
 } 

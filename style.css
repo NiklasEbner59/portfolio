@@ -39,6 +39,16 @@ body {
   top: -100px;
 }
 
+.navbar-hotzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 12px;
+  z-index: 200;
+  pointer-events: auto;
+}
+
 .nav-left .nav-home {
   color: var(--color-primary);
   text-decoration: none;

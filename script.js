@@ -20,37 +20,62 @@ if (homeBtn) {
   });
 }
 
-// Dynamische Projekte
+// Projekte-Array
 const projects = [
   {
     title: "Portfolio Website",
-    description: "A personal website to showcase my projects and skills.",
-    image: "", // z.B. "project1.jpg" oder leer lassen
+    description: "This is my personal portfolio website where I present my projects",
+    image: "project_thumbnails/portfolio_thumbnail.png",
     link: "https://github.com/NiklasEbner59/portfolio",
-    tags: ["HTML", "CSS", "JavaScript"]
+    tags: ["JavaScript", "HTML", "CSS"]
   }
-  // Weitere Projekte einfach ergänzen
+  // Weitere Projekte können hier ergänzt werden
 ];
 
-const projectsSection = document.querySelector('.projects-section');
-const projectsList = document.createElement('div');
-projectsList.className = 'projects-list';
-
-projects.forEach(project => {
-  const article = document.createElement('article');
-  article.className = 'project';
-  article.innerHTML = `
-    <h3>${project.title}</h3>
-    <p>${project.description}</p>
-    ${project.image ? `<img src="${project.image}" alt="${project.title}" class="project-img">` : ""}
-    ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">View Project</a>` : ""}
-    ${project.tags ? `<div class="tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>` : ""}
-  `;
-  projectsList.appendChild(article);
+// Projekte dynamisch einfügen
+window.addEventListener('DOMContentLoaded', () => {
+  const projectsList = document.querySelector('.projects-list');
+  if (projectsList) {
+    projects.forEach(project => {
+      const projectDiv = document.createElement('div');
+      projectDiv.className = 'project';
+      projectDiv.innerHTML = `
+        <img src="${project.image}" alt="${project.title} Thumbnail" class="project-thumb">
+        <div class="project-info">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <a href="${project.link}" class="project-link">View Project</a>
+          ${project.tags && project.tags.length ? `<div class="tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>` : ''}
+        </div>
+      `;
+      projectsList.appendChild(projectDiv);
+    });
+  }
 });
 
-// Entferne evtl. statische Beispielprojekte
-const staticProject = projectsSection.querySelector('.project');
-if (staticProject) staticProject.remove();
+// Navbar ein-/ausklappen beim Scrollen und Mouseover
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+let navbarHovered = false;
 
-projectsSection.appendChild(projectsList); 
+if (navbar) {
+  navbar.addEventListener('mouseenter', () => {
+    navbar.classList.remove('navbar--hidden');
+    navbarHovered = true;
+  });
+  navbar.addEventListener('mouseleave', () => {
+    navbarHovered = false;
+  });
+
+  window.addEventListener('scroll', () => {
+    if (navbarHovered) return; // Beim Hover nicht verstecken
+    if (window.scrollY > lastScrollY && window.scrollY > 50) {
+      // Nach unten scrollen
+      navbar.classList.add('navbar--hidden');
+    } else {
+      // Nach oben scrollen
+      navbar.classList.remove('navbar--hidden');
+    }
+    lastScrollY = window.scrollY;
+  });
+} 

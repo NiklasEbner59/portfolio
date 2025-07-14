@@ -28,6 +28,13 @@ const projects = [
     image: "images/project_thumbnails/portfolio_thumbnail.png",
     link: "https://github.com/NiklasEbner59/portfolio",
     tags: ["JavaScript", "HTML", "CSS"]
+  },
+  {
+    title: "TODO Website",
+    description: "This is a very basic todo application",
+    image: "images/project_thumbnails/todo_thumbnail.png",
+    link: "https://github.com/NiklasEbner59/todo-website",
+    tags: ["JavaScript", "HTML", "CSS", "Python", "Docker"]
   }
   // Weitere Projekte können hier ergänzt werden
 ];

@@ -35,6 +35,13 @@ const projects = [
     image: "images/project_thumbnails/todo_thumbnail.png",
     link: "https://github.com/NiklasEbner59/todo-website",
     tags: ["JavaScript", "HTML", "CSS", "Python", "Docker"]
+  },
+  {
+    title: "Data-Manager",
+    description: "This is a very basic mobile App for managing Files/Directories",
+    image: "images/project_thumbnails/data_manager_thumbnail.png",
+    link: "https://github.com/NiklasEbner59/data-manager",
+    tags: ["Vue.js", "Capacitor", "Ionic"]
   }
   // Weitere Projekte können hier ergänzt werden
 ];
